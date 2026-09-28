@@ -4,7 +4,7 @@ This repository contains my personal portfolio website built with HTML and CSS.
 
 ## Live Portfolio
 
-Add your live portfolio link here:
+
 
 - https://bhabya.netlify.app/portfolio.html
 
