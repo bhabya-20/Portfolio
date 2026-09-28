@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bhabya | Full-Stack & Mobile Developer</title>
+<meta name="description" content="Portfolio of Bhabya, full-stack developer, Flutter developer and solutions engineer based in Bengaluru.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF2F6; --panel:#FFFFFF; --ink:#14213D; --muted:#56617A; --line:#CBD4E1; --accent:#2F3BFF; --on-accent:#fff;
+  --display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;
+  --text:'Newsreader',Georgia,'Times New Roman',serif;
+  --shadow:0 30px 60px rgba(20,33,61,.10);
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#0F1626;--panel:#172038;--ink:#E7ECF7;--muted:#9AA6C0;--line:#2A3555;--accent:#8C95FF;--on-accent:#0F1626}
+}
+:root[data-theme="dark"]{--paper:#0F1626;--panel:#172038;--ink:#E7ECF7;--muted:#9AA6C0;--line:#2A3555;--accent:#8C95FF;--on-accent:#0F1626}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at top, rgba(47,59,255,.08), transparent 35%), var(--paper);color:var(--ink);font-family:var(--text);font-size:1.125rem;line-height:1.65}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0;font-family:var(--display);font-weight:500;font-size:.95rem}
+header.top nav{display:flex;gap:1.5rem}
+header.top a{text-decoration:none;color:var(--muted)}
+header.top a:hover{color:var(--ink)}
+.hero{padding:clamp(3rem,10vw,7rem) 0 clamp(2rem,5vw,3rem)}
+.hero-grid{display:grid;grid-template-columns:1.5fr .8fr;gap:2rem;align-items:center}
+.hero-copy h1{font-family:var(--display);font-weight:800;font-size:clamp(4rem,16vw,11rem);line-height:.84;letter-spacing:-.055em;margin:0 0 1rem;color:var(--accent)}
+.hero .roles{font-family:var(--display);font-weight:700;font-size:clamp(1.2rem,2.6vw,1.8rem);margin:0 0 1rem;letter-spacing:-.01em}
+.hero p.lead{max-width:38rem;color:var(--muted);margin:0 0 2rem}
+.hero .badge{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .8rem;border-radius:999px;background:rgba(47,59,255,.08);color:var(--accent);font-family:var(--display);font-weight:700;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1rem;border:1px solid rgba(47,59,255,.12)}
+.hero .badge::before{content:"";display:inline-block;width:.55rem;height:.55rem;border-radius:50%;background: #2dd4bf;box-shadow:0 0 0 3px rgba(45,212,191,.18)}
+.links{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{font-family:var(--display);font-weight:700;font-size:1rem;text-decoration:none;padding:.7rem 1.25rem;border-radius:999px;border:2px solid var(--ink);transition:transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn:hover{transform:translateY(-1px);box-shadow:var(--shadow);background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.btn.primary:hover{background:var(--ink);border-color:var(--ink)}
+.hero-panel{background:linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.96));border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:1.5rem;backdrop-filter:blur(10px);color:var(--ink)}
+.hero-panel .mini-label{font-family:var(--display);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:#1a2438;margin:0 0 1rem}
+.hero-panel .big{font-family:var(--display);font-weight:800;font-size:clamp(2rem,5vw,3.2rem);line-height:1;letter-spacing:-.05em;margin:0 0 1.2rem;color:#0d172d}
+.hero-panel .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+.hero-panel .stat{padding:1rem;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.78);color:#0d172d}
+.hero-panel .stat strong{display:block;font-family:var(--display);font-size:1.5rem;letter-spacing:-.04em;margin-bottom:.15rem;color:#0d172d}
+.hero-panel .stat span{color:#17263f;font-size:.92rem; font-weight:600}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hero h1{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+section{padding:clamp(2.5rem,7vw,4.5rem) 0;border-top:1px solid var(--line)}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,5vw,2.75rem);letter-spacing:-.03em;line-height:1.05;margin:0 0 2rem}
+h3{font-family:var(--display);font-weight:700;font-size:1.35rem;letter-spacing:-.01em;margin:0}
+.meta{font-family:var(--display);font-weight:500;font-size:.95rem;color:var(--muted)}
+ul{padding-left:1.1rem;margin:.75rem 0 0}
+li{margin-bottom:.45rem;max-width:44rem}
+li::marker{color:var(--accent)}
+.timeline{position:relative;padding-left:1.75rem;border-left:2px solid var(--line);display:grid;gap:2.5rem}
+.job{position:relative;transition:transform .2s ease, border-color .2s ease}
+.job:hover{transform:translateX(3px)}
+.job::before{content:"";position:absolute;left:calc(-1.75rem - 7px);top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--paper)}
+.job .head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.25rem 1rem;align-items:baseline}
+.projects{display:grid;gap:1.5rem}
+.project{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:1.75rem;box-shadow:0 12px 24px rgba(20,33,61,.04);transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease}
+.project:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:rgba(47,59,255,.25)}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:.75rem 0 0;padding:0;list-style:none}
+.tags li{margin:0;font-family:var(--display);font-weight:500;font-size:.85rem;padding:.2rem .65rem;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.75rem 2rem}
+.skills > div{padding:1.1rem 1rem;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.7);transition:transform .2s ease, border-color .2s ease}
+.skills > div:hover{transform:translateY(-2px);border-color:rgba(47,59,255,.25)}
+.skills h3{font-size:1.05rem;margin-bottom:.35rem;color:#0f172a}
+.skills p{margin:0;color:#1b2942;font-size:1.02rem;line-height:1.55;font-weight:600}
+.contact p{max-width:36rem;color:var(--muted);margin:0 0 1.5rem}
+.mail{font-family:var(--display);font-weight:800;font-size:clamp(1.4rem,5.5vw,2.75rem);letter-spacing:-.03em;word-break:break-word;text-decoration-thickness:3px;text-underline-offset:6px;text-decoration-color:var(--accent)}
+footer{padding:2rem 0 3rem;color:var(--muted);font-family:var(--display);font-size:.9rem;border-top:1px solid var(--line)}
+@media (max-width:780px){.hero-grid{grid-template-columns:1fr}.hero-panel{margin-top:1rem}} 
+@media (max-width:520px){header.top nav{gap:1rem}.hero-panel .stats{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){.hero h1,.btn,.project,.skills > div,.job{animation:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <span>Bhabya</span>
+    <nav aria-label="Sections"><a href="#work">Work</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="badge">Available for work</div>
+          <h1>Bhabya</h1>
+          <p class="roles">Full-stack developer, mobile developer and solutions engineer.</p>
+          <p class="lead">I design and build digital products for real business problems — from finance workflows to customer-facing apps that feel fast and intuitive.</p>
+          <div class="links">
+            <a class="btn primary" href="mailto:bhabyasingh2008@gmail.com">Email me</a>
+            <a class="btn" href="BHABYA.pdf" target="_blank" rel="noopener">View resume</a>
+            <a class="btn" href="https://github.com/bhabya-20" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/bhabya-195782289/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Key achievements">
+          <p class="mini-label">Impact</p>
+          <p class="big">3x</p>
+          <p style="margin:0 0 1rem;color:#1b283d">automation-focused browser extensions shipped for repetitive workflows.</p>
+          <div class="stats">
+            <div class="stat"><strong>50+</strong><span>active users</span></div>
+            <div class="stat"><strong>9.01</strong><span>CGPA</span></div>
+            <div class="stat"><strong>2</strong><span>major roles</span></div>
+            <div class="stat"><strong>100%</strong><span>hands-on</span></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <section id="work" aria-labelledby="work-h">
+      <h2 id="work-h">Work</h2>
+      <div class="timeline">
+        <article class="job">
+          <div class="head"><h3>Associate Software Engineer, AiBi Tech</h3><span class="meta">21 July 2026 – Present, Bengaluru</span></div>
+          <ul>
+            <li>Built production web applications with React.js, Node.js, Express.js, Prisma, REST APIs and Docker, covering frontend, backend, authentication, database schemas and business workflows.</li>
+            <li>Shipped cross-platform mobile features in Flutter and Dart, integrating production REST APIs for 50+ active users.</li>
+            <li>Worked with PostgreSQL, MySQL, SQLite and MongoDB, designing data flows and backend services.</li>
+            <li>Worked directly with stakeholders to turn business requirements into technical specifications and helped shape product and workflow decisions.</li>
+            <li>Built and deployed 3 Chrome extensions that automate repetitive business workflows, bringing manual processing down to about 5 to 10 minutes per task.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <div class="head"><h3>Associate Software Engineer Intern, AiBi Tech</h3><span class="meta">21 July 2025 – 21 July 2026, Bengaluru</span></div>
+          <ul>
+            <li>Worked in the same Associate Software Engineer role during the internship period, contributing to product development, workflow automation, and client-facing feature delivery.</li>
+            <li>Built and improved web and mobile solutions using modern JavaScript and Flutter-based product workflows.</li>
+            <li>Supported backend, integration work, debugging, testing, and deployment while preparing for continuation into full-time employment.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <div class="head"><h3>Software Developer Intern, Bluestock Fintech</h3><span class="meta">May to June 2025, Remote</span></div>
+          <ul>
+            <li>Developed a production-ready IPO platform on the MERN stack, working across frontend, backend and SQL-based data management.</li>
+            <li>Handled financial-market data such as issue size, price bands, opening and closing dates, and regulatory documents.</li>
+            <li>Led the intern development team and worked with product stakeholders to deliver features for a live, client-facing product.</li>
+            <li>Contributed across the lifecycle: features, API integration, debugging, testing and deployment.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="certificates" aria-labelledby="certs-h">
+      <h2 id="certs-h">Certificates</h2>
+      <div class="projects">
+        <article class="project">
+          <h3>Bluestock Fintech Internship Certificate</h3>
+          <p style="margin:.5rem 0 1rem;color:var(--muted)">Internship experience completed with the Bluestock Fintech team.</p>
+          <img src="BFSD40212.jpg" alt="Bluestock internship certificate" style="width:100%;max-width:760px;border:1px solid var(--line);border-radius:14px;display:block;object-fit:contain;background:#fff;">
+          <div class="links" style="margin-top:1rem;">
+            <a class="btn" href="BFSD40212.jpg" target="_blank" rel="noopener">Open certificate</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="proj-h">
+      <h2 id="proj-h">Projects</h2>
+      <div class="projects">
+        <article class="project">
+          <h3>DocFlow, a collaborative document workspace</h3>
+          <p style="margin:.5rem 0 0;color:var(--muted)">Create, edit, organize, import and share documents in one place.</p>
+          <ul>
+            <li>Frontend in React, Vite and TipTap, with rich-text editing, document organization and sharing.</li>
+            <li>Backend in Node.js and Express with SQLite (better-sqlite3) for authentication, document management and file uploads.</li>
+            <li>Imports existing documents using Mammoth and Marked. Frontend deployed on Netlify, backend on Render.</li>
+          </ul>
+          <ul class="tags" aria-label="Technologies"><li>React</li><li>Node.js</li><li>Express</li><li>SQLite</li><li>TipTap</li><li>Vite</li><li>Netlify</li><li>Render</li></ul>
+        </article>
+        <article class="project">
+          <h3>Hateful meme detection system</h3>
+          <p style="margin:.5rem 0 0;color:var(--muted)">A multimodal machine-learning pipeline that classifies memes using both image and text.</p>
+          <ul>
+            <li>Extracted meme text with Tesseract OCR and represented it with BERT.</li>
+            <li>Extracted visual features with CNN and ResNet-based models, then combined image and text features for classification.</li>
+            <li>Processed about 10,000 meme images, both manually labelled and unlabeled.</li>
+          </ul>
+          <ul class="tags" aria-label="Technologies"><li>Python</li><li>TensorFlow</li><li>CNN</li><li>BERT</li><li>OCR</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-h">
+      <h2 id="skills-h">Skills</h2>
+      <div class="skills">
+        <div><h3>Full-stack</h3><p>React.js, Node.js, Express.js, JavaScript, HTML5, CSS3, REST APIs, Prisma ORM</p></div>
+        <div><h3>Mobile</h3><p>Flutter, Dart, BLoC, SQLite, Firebase, REST API integration</p></div>
+        <div><h3>Backend and databases</h3><p>PostgreSQL, MySQL, SQLite, MongoDB</p></div>
+        <div><h3>Languages</h3><p>Python, Java, C, C++, JavaScript, SQL, Dart</p></div>
+        <div><h3>AI and machine learning</h3><p>TensorFlow, PyTorch, Keras, CNN, ResNet, BERT, Tesseract OCR</p></div>
+        <div><h3>Tools and DevOps</h3><p>Docker, Git, GitHub, Postman, VS Code</p></div>
+        <div><h3>Data and analytics</h3><p>Excel, Power BI, data cleaning, analysis and visualization</p></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="edu-h">
+      <h2 id="edu-h">Education</h2>
+      <h3>B.Tech in Computer Science Engineering (AI and ML)</h3>
+      <p class="meta" style="margin:.25rem 0 0">Sikkim Manipal Institute of Technology, 2022 to 2026, CGPA 9.01</p>
+    </section>
+
+    <section id="contact" class="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h">Let's work together</h2>
+      <p>I'm open to full-stack, mobile and solutions engineering roles. The fastest way to reach me is email.</p>
+      <a class="mail" href="mailto:bhabyasingh2008@gmail.com">bhabyasingh2008@gmail.com</a>
+    </section>
+  </main>
+
+  <footer>Bhabya, Bengaluru. <a href="https://github.com/bhabya-20" target="_blank" rel="noopener">GitHub</a> and <a href="https://www.linkedin.com/in/bhabya-195782289/" target="_blank" rel="noopener">LinkedIn</a>.</footer>
+</div>
+</body>
+</html>
